@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Align all content in the center */
+            background-color: darkturquoise;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #register-page, #welcome-page, #monthly-activity-page {
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        select {
+            padding: 5px;
+            margin-top: 10px;
+        }
+        .login{
+            display:grid;
+           gap: 20px;
+            justify-content: center;
+        
+        }
+        .login-page{
+            background-color: bisque;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+        .logtext{
+            padding-bottom: 20px;
+        }
+        .logbutton{
+            background-color: crimson;
+            padding: 6px;
+            border:none;
+            color: whitesmoke;
+            margin-bottom: 10px;
+        }
+        .name{
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- School Logo and Name -->
+        <div class="school-header">
+            <img src="data:image/png;base64,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" alt="School Logo" style="width: 100px;">
+            <h1 class="school-name">Spring Flowers School</h1>
+        </div>
+
+        <div id="login-page" class="login-page">
+            <h2 class="logtext">Login</h2>
+            <form id="login-form" class="login">
+                <input  class="name" type="password" id="login-username" placeholder="Username" required>
+                <input class="name" type="password" id="login-password" placeholder="Password" required>
+                <button  class="name" type="submit" class="logbutton">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+        </div>
+        
+        <div id="register-page" class="login-page">
+            <h2>Register</h2>
+            <form id="register-form" class="login">
+                <input class="name" type="text" id="new-username" placeholder="Username" required>
+                <input class="name" type="password" id="new-password" placeholder="Password" required>
+                <button type="submit" class="logbutton">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+        </div>
+        
+        <div id="welcome-page">
+            <h2>Welcome, <span id="welcome-username"></span>!</h2>
+            <button id="monthly-chart-btn">Monthly Chart</button>
+        </div>
+        
+        <div id="monthly-activity-page">
+            <h2>Monthly Activity</h2>
+            <select id="subject-dropdown">
+                <option value="Maths">Maths</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
+                <option value="Social">Social</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Computers">Computers</option>
+                <!-- Add more subjects here -->
+            </select>
+            <div id="activity-list"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Retrieve input values
+            var username = document.getElementById("login-username").value;
+            var password = document.getElementById("login-password").value;
+            
+            // Perform login validation (in this example, just check if username and password match)
+            if (localStorage.getItem(username) === password) {
+                // Login successful
+                document.getElementById("welcome-username").textContent = username;
+                showPage("welcome-page");
+            } else {
+                // Login failed
+                alert("Invalid username or password.");
+            }
+        });
+
+        // Event listener for register form submission
+        document.getElementById("register-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Retrieve input values
+            var username = document.getElementById("new-username").value;
+            var password = document.getElementById("new-password").value;
+            
+            // Perform registration (store username and password in localStorage)
+            localStorage.setItem(username, password);
+            alert("Registration successful. Please log in.");
+            showPage("login-page");
+        });
+
+        // Event listener for register link click
+        document.getElementById("register-link").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            showPage("register-page");
+        });
+
+        // Event listener for login link click
+        document.getElementById("login-link").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            showPage("login-page");
+        });
+
+        // Event listener for Monthly Chart button click
+        document.getElementById("monthly-chart-btn").addEventListener("click", function() {
+            showPage("monthly-activity-page");
+        });
+
+        // Event listener for subject dropdown change
+        document.getElementById("subject-dropdown").addEventListener("change", function() {
+            var selectedSubject = this.value;
+            var activityList = document.getElementById("activity-list");
+            activityList.innerHTML = ""; // Clear previous activity list
+
+            // Example monthly activities (you should replace this with your actual data)
+            var monthlyActivities = [
+                { id: 1, activity: "Exam will be conduct in very soon so be prepare guys", subject: "Maths" },
+                { id: 2, activity: "conduct a science experiment", subject: "Science" },
+                { id: 3, activity: "read a novel", subject: "English" },
+                // Add more activities here
+            ];
+
+            // Filter activities based on selected subject
+            var filteredActivities = monthlyActivities.filter(function(activity) {
+                return activity.subject === selectedSubject;
+            });
+
+            // Display activities
+            filteredActivities.forEach(function(activity) {
+                var activityItem = document.createElement("div");
+                activityItem.textContent = activity.activity;
+                activityList.appendChild(activityItem);
+            });
+        });
+
+        // Function to display a specific page while hiding others
+        function showPage(pageId) {
+            var pages = document.querySelectorAll(".container > div");
+            pages.forEach(function(page) {
+                if (page.id === pageId) {
+                    page.style.display = "block";
+                } else {
+                    page.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
