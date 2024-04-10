@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure footer is at the bottom */
+        }
+        .container {
+            padding: 20px;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1; /* Ensure header is above other sections */
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            color: #333;
+        }
+        main {
+            flex: 1; /* Expand to fill remaining space */
+            padding: 20px 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                margin-top: 15px;
+            }
+            .navbar-brand, .navbar-nav .nav-link {
+                font-size: 16px;
+            }
+        }
+
+        /* Colorful CSS styling */
+        .section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide all sections by default */
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .student-photo img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Spring Flowers School</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#studentProfile">Student Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timetable">Timetable</a> <!-- Added Timetable link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="logo">
+            <img src="download.png" alt="School Logo" class="img-fluid" style="width: 100px;">
+        </div>
+    </header>
+    <main>
+        <section class="section" id="home">
+            <div class="container">
+                <h2>Welcome to Spring Flowers School</h2>
+                <p>Hello there! Welcome to our school website. We are delighted to have you here.</p>
+                <p>Feel free to explore the information about our school, student profiles, timetable, and contact details.</p>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="container">
+                <h2>About Spring Flowers School</h2>
+                <p>This is the about section. Add your about content here.</p>
+            </div>
+        </section>
+        <section class="section student-details" id="studentProfile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="student-photo">
+                            <img src="student.jpeg" alt="Student Photo" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="student-info">
+                            <h2>Robert</h2>
+                            <p>Class: 12th Grade</p>
+                            <p>Roll Number: 098765</p>
+                            <p>DOB: August 08, 2001</p>
+                            <p>Address: Abcd, Efgh, Hijk, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="timetable">
+            <div class="container">
+                <h2>Timetable</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Subject Number</th>
+                            <th scope="col">Subject Name</th>
+                            <th scope="col">Exam Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>English</td>
+                            <td>2024-04-10</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>French</td>
+                            <td>2024-04-12</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Japanese</td>
+                            <td>2024-04-15</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>German</td>
+                            <td>2024-04-18</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Spanish</td>
+                            <td>2024-04-20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>
+                    Contact us : 000-123456 <br>
+                   Write to us : abcdinfo@gmail.com<br>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Spring Flowers School. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // JavaScript to toggle sections
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('.section');
+    
+            // Initially display the home section
+            document.getElementById('home').style.display = 'block';
+    
+            // Event listener for navigation links
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+    
+                    // Hide all sections except the targeted one
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
